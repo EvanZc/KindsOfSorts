@@ -18,6 +18,8 @@
 #include <string>
 #include <vector>
 
+#include <random>
+
 
 //Read vec of vec<int> from a file
 
@@ -48,10 +50,16 @@ void ReadUnsignedIntVecFromFile(std::vector< std::vector<int> >& out_vec,const s
     }
 }
 
-void WriteRandomUnsignedIntToFile(const std::string & k_full_file_path_to_write)
+void WriteRandomUnsignedIntToFile(const std::string & k_full_file_path_to_write, \
+                                  const unsigned int k_max_vec_int_vec_len, const unsigned int k_max_num)
 {
     if (!k_full_file_path_to_write.length()) {
         std::cout<<"File path len is 0, can not write anything."<<__FUNCTION__<<std::endl;
+        return;
+    }
+    
+    if (!k_max_vec_int_vec_len) {
+        std::cout<<"vec<int> len is "<<k_max_vec_int_vec_len<<", "<<__FUNCTION__<<std::endl;
         return;
     }
     
