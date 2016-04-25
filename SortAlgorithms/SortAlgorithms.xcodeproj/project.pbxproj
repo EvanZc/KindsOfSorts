@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		593165B61CCD0519008E3913 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593165B51CCD0519008E3913 /* main.cpp */; };
 		593165BA1CCD118F008E3913 /* FileOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593165B81CCD118F008E3913 /* FileOperation.cpp */; };
+		593165BF1CCE7058008E3913 /* ToolFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593165BD1CCE7058008E3913 /* ToolFunctions.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		593165B51CCD0519008E3913 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		593165B81CCD118F008E3913 /* FileOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileOperation.cpp; sourceTree = "<group>"; };
 		593165B91CCD118F008E3913 /* FileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOperation.h; sourceTree = "<group>"; };
+		593165BD1CCE7058008E3913 /* ToolFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToolFunctions.cpp; sourceTree = "<group>"; };
+		593165BE1CCE7058008E3913 /* ToolFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolFunctions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 		593165B41CCD04F9008E3913 /* CodeFiles */ = {
 			isa = PBXGroup;
 			children = (
+				593165C01CCE7061008E3913 /* tools */,
 				593165B51CCD0519008E3913 /* main.cpp */,
 				593165BC1CCD1258008E3913 /* FileOperation */,
 			);
@@ -73,6 +77,15 @@
 				593165B81CCD118F008E3913 /* FileOperation.cpp */,
 			);
 			name = FileOperation;
+			sourceTree = "<group>";
+		};
+		593165C01CCE7061008E3913 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				593165BD1CCE7058008E3913 /* ToolFunctions.cpp */,
+				593165BE1CCE7058008E3913 /* ToolFunctions.h */,
+			);
+			name = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				593165B61CCD0519008E3913 /* main.cpp in Sources */,
+				593165BF1CCE7058008E3913 /* ToolFunctions.cpp in Sources */,
 				593165BA1CCD118F008E3913 /* FileOperation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

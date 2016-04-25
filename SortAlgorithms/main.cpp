@@ -7,11 +7,12 @@
 //
 
 #include <iostream>
-
-
+#include "FileOperation.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
+    WriteRandomUnsignedIntToFile("abc.", 30, 10, 14);
+    
     std::cout << "Hello, World!\n";
     return 0;
 }
