@@ -19,7 +19,7 @@ unsigned int GetAnUnsignedNumFromSpecRange(unsigned int const k_num_from, unsign
     }
     
     unsigned int result_num = 0;
-    std::default_random_engine num_generator;
+    std::default_random_engine num_generator(std::random_device{}());
     std::uniform_int_distribution<int> distribution(k_num_from, k_num_to);
     
     result_num = distribution(num_generator);

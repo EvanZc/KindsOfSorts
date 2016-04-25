@@ -57,6 +57,8 @@ void WriteRandomUnsignedIntToFile(const std::string & k_full_file_path_to_write,
     //random line of arrays
     unsigned int vec_int_vec_length = GetAnUnsignedNumFromSpecRange(kMinLength, k_max_vec_int_vec_len);
     
+    std::cout<<"vec_int_vec len is "<<vec_int_vec_length<<std::endl;
+    
     if (vec_int_vec_length < kMinLength) {
         std::cout<<"write failed, get wrong random num. "<<__FUNCTION__<<" "<<__LINE__<<std::endl;
         
@@ -65,7 +67,9 @@ void WriteRandomUnsignedIntToFile(const std::string & k_full_file_path_to_write,
     
     while (vec_int_vec_length) {
         //random array len
-        unsigned int vec_int_length = GetAnUnsignedNumFromSpecRange(kMinLength, k_max_num);
+        unsigned int vec_int_length = GetAnUnsignedNumFromSpecRange(kMinLength, int_vec_len);
+        
+        std::cout<<"vec_int len is "<<vec_int_length<<std::endl;
         
         if (vec_int_length < kMinLength) {
             std::cout<<"write failed, get wrong random num. "<<__FUNCTION__<<" "<<__LINE__<<std::endl;
@@ -76,6 +80,8 @@ void WriteRandomUnsignedIntToFile(const std::string & k_full_file_path_to_write,
         while (vec_int_length) {
             //random unsigned int number
             unsigned int random_int = GetAnUnsignedNumFromSpecRange(kMinLength, k_max_num);
+            
+            std::cout<<"random_int len is "<<random_int<<std::endl;
             
             if (random_int < kMinLength) {
                 std::cout<<"write failed, get wrong random num. "<<__FUNCTION__<<" "<<__LINE__<<std::endl;
@@ -89,6 +95,8 @@ void WriteRandomUnsignedIntToFile(const std::string & k_full_file_path_to_write,
             
             vec_int_length--;
         }
+        
+        file_to_write_stream << "\n";
         
         vec_int_vec_length--;
     }
