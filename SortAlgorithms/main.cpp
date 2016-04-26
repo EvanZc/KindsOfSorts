@@ -8,10 +8,15 @@
 
 #include <iostream>
 #include "FileOperation.h"
+#include "ToolFunctions.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    WriteRandomUnsignedIntToFile("/Users/zc/Desktop/abc.txt", 30, 10, 14);
+    //WriteRandomUnsignedIntToFile("/Users/zc/Desktop/abc.txt", 30, 10, 14);
+    
+    std::chrono::nanoseconds nano1 = GetNowNanoSecond();
+    
+    std::cout<<"now nanoseconds is "<<nano1.count()<<std::endl;
     
     std::cout << "Hello, World!\n";
     return 0;

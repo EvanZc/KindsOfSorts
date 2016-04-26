@@ -26,3 +26,6 @@ unsigned int GetAnUnsignedNumFromSpecRange(unsigned int const k_num_from, unsign
     
     return result_num;
 }
+
+////get now time by nanoscond
+inline std::chrono::nanoseconds GetNowNanoSecond();
