@@ -12,11 +12,11 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    //WriteRandomUnsignedIntToFile("/Users/zc/Desktop/abc.txt", 30, 10, 14);
+    WriteRandomUnsignedIntToFile("/Users/zc/Desktop/abc.txt", 30, 10, 14);
     
-    std::chrono::nanoseconds nano1 = GetNowNanoSecond();
+    std::vector<std::vector<int> >vec;
     
-    std::cout<<"now nanoseconds is "<<nano1.count()<<std::endl;
+    ReadUnsignedIntVecFromFile(vec, "/Users/zc/Desktop/abc.txt");
     
     std::cout << "Hello, World!\n";
     return 0;

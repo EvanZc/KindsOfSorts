@@ -35,6 +35,13 @@ inline std::chrono::nanoseconds GetNowNanoSecond()
 }
 
 
+//how to pass any number of parameters
+inline void PrintLogToCommandLine(std::string &string)
+{
+
+}
+
+
 
 //get time diff
 
