@@ -7,39 +7,49 @@
 //
 
 #include "QuickSort.h"
+#include "ReturnValue.h"
 
-void QuickSortStandard(std::vector<int>& be_sorted_vec)
+void QuickSortStandard(std::vector<int>& be_sorted_vec, const unsigned long idx_start, const unsigned long idx_end)
 {
-    if (be_sorted_vec.size() <= 1) {
+    if (be_sorted_vec.size() < 1) {
+        std::cout<<"This is an empty vec. "<<__FUNCTION__<<std::endl;
+        
         return;
     }
-    //pick up the pivot
     
+    if ((idx_start > idx_end) || (idx_end >= be_sorted_vec.size())) {
+        std::cout<<"Vec size is "<<be_sorted_vec.size()<<", start index is "<<idx_start;
+        std::cout<<", end index is "<<idx_end<<std::endl;
+        
+        return;
+    }
+    
+    if (idx_start == idx_end) {
+        return;
+    }
+    
+    //pick up the pivot
+    unsigned long idx_part = QuickSortStandardPickPivot(be_sorted_vec, idx_start, idx_end);
     
     //sort left
+    QuickSortStandard(be_sorted_vec, idx_start, idx_part - 1);
     //sort right
+    QuickSortStandard(be_sorted_vec, idx_part, idx_end);
 }
 
-int QuickSortStandardPickPivot(std::vector<int>& be_sorted_vec, int idx_begin, int idx_end)
+unsigned long QuickSortStandardPickPivot(std::vector<int>& be_sorted_vec,unsigned long idx_begin,unsigned long idx_end)
 {
-    if ((idx_begin < 0) || (idx_end < 0) || (idx_begin < idx_end)) {
-        std::cout<<"Parameters error idx_begin is "<<idx_begin<<", idx_end is "<<idx_end<<std::endl;
-        return -1;
-    }
-    
-    if (idx_begin == idx_end) {
-        return idx_begin;
-    }
-    
-    int pivot = be_sorted_vec[idx_begin];
+    unsigned long begin_pivot = idx_begin++;
     int temp_int;
     
     while (idx_begin < idx_end) {
-        while (be_sorted_vec[idx_begin] <= pivot) {
+        if (be_sorted_vec[idx_begin] <= be_sorted_vec[begin_pivot]) {
             idx_begin++;
+            continue;
         }
-        while (be_sorted_vec[idx_end] > pivot) {
+        if (be_sorted_vec[idx_end] > be_sorted_vec[begin_pivot]) {
             idx_end--;
+            continue;
         }
         
         temp_int = be_sorted_vec[idx_begin];
@@ -48,7 +58,12 @@ int QuickSortStandardPickPivot(std::vector<int>& be_sorted_vec, int idx_begin, i
         
     }
     
-    int idx_pivot = idx_begin;
+    if (be_sorted_vec[begin_pivot] > be_sorted_vec[idx_end]) {
+        temp_int = be_sorted_vec[begin_pivot];
+        be_sorted_vec[begin_pivot] = be_sorted_vec[idx_end];
+        be_sorted_vec[idx_end] = temp_int;
+    }
     
-    return idx_pivot;
+    
+    return idx_end;
 }

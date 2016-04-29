@@ -9,6 +9,7 @@
 #include <iostream>
 #include "FileOperation.h"
 #include "ToolFunctions.h"
+#include "QuickSort.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -17,6 +18,20 @@ int main(int argc, const char * argv[]) {
     std::vector<std::vector<int> >vec;
     
     ReadUnsignedIntVecFromFile(vec, "/Users/zc/Desktop/abc.txt");
+    
+    for (int i = 0; i < vec.size(); i++) {
+        if (vec[i].size() > 0) {
+            QuickSortStandard(vec[i], 0, vec[i].size() - 1);
+        }
+        else{
+            std::cout<<"Number "<<i<<" vec's size is 0."<<std::endl;
+        }
+        
+        for (int j = 0; j < vec[i].size(); j++) {
+            std::cout<<vec[i][j]<<" ";
+        }
+        std::cout<<std::endl;
+    }
     
     std::cout << "Hello, World!\n";
     return 0;

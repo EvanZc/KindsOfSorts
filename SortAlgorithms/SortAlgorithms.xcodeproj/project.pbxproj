@@ -34,6 +34,7 @@
 		593165BE1CCE7058008E3913 /* ToolFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolFunctions.h; sourceTree = "<group>"; };
 		59E0374A1CD2702400A58DAB /* QuickSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuickSort.cpp; sourceTree = "<group>"; };
 		59E0374B1CD2702400A58DAB /* QuickSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickSort.h; sourceTree = "<group>"; };
+		59E0374D1CD391B200A58DAB /* ReturnValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReturnValue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +67,7 @@
 		593165B41CCD04F9008E3913 /* CodeFiles */ = {
 			isa = PBXGroup;
 			children = (
+				59E0374D1CD391B200A58DAB /* ReturnValue.h */,
 				59E037491CD26EB500A58DAB /* SortAlgorithms */,
 				593165C01CCE7061008E3913 /* tools */,
 				593165B51CCD0519008E3913 /* main.cpp */,

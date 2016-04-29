@@ -13,8 +13,8 @@
 #include <iostream>
 #include <vector>
 
-void QuickSortStandard(std::vector<int>&);
+void QuickSortStandard(std::vector<int>&,const unsigned long idx_start,const unsigned long idx_end);
 
-int QuickSortStandardPickPivot(std::vector<int>& be_sorted_vec, int idx_begin, int idx_end);
+unsigned long QuickSortStandardPickPivot(std::vector<int>& be_sorted_vec, unsigned long idx_begin, unsigned long idx_end);
 
 #endif /* defined(__SortAlgorithms__QuickSort__) */
