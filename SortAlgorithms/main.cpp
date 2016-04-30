@@ -7,32 +7,20 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "FileOperation.h"
 #include "ToolFunctions.h"
 #include "QuickSort.h"
+#include "TestSortResult.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    WriteRandomUnsignedIntToFile("/Users/zc/Desktop/abc.txt", 30, 10, 14);
+    std::vector<std::vector<int> > vec = GetFixLenVecIntVecWithValueInSpecRange(1, 1000000, 0, 10000000);
     
-    std::vector<std::vector<int> >vec;
+    QuickSortStandard(vec[0]);
     
-    ReadUnsignedIntVecFromFile(vec, "/Users/zc/Desktop/abc.txt");
-    
-    for (int i = 0; i < vec.size(); i++) {
-        if (vec[i].size() > 0) {
-            QuickSortStandard(vec[i], 0, vec[i].size() - 1);
-        }
-        else{
-            std::cout<<"Number "<<i<<" vec's size is 0."<<std::endl;
-        }
-        
-        for (int j = 0; j < vec[i].size(); j++) {
-            std::cout<<vec[i][j]<<" ";
-        }
-        std::cout<<std::endl;
+    if (!IsVecIntAscendingOrder(vec[0])) {
+        std::cout<<"oops"<<std::endl;
     }
     
-    std::cout << "Hello, World!\n";
     return 0;
 }

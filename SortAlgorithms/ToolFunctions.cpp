@@ -11,14 +11,14 @@
 //get a number from [k_num_from, k_num_to]
 //if 'from' < 'to' return 0
 //be careful when judge the return value, cause k_num_from can be 0.
-unsigned int GetAnUnsignedNumFromSpecRange(unsigned int const k_num_from, unsigned int const k_num_to)
+int GetAnUnsignedNumFromSpecRange(int const k_num_from, int const k_num_to)
 {
     if (k_num_from > k_num_to) {
         std::cout<<"range is not ok, small is "<<k_num_from<<", big is "<<k_num_to<<"."<<__FUNCTION__<<std::endl;
         return 0;
     }
     
-    unsigned int result_num = 0;
+    int result_num = 0;
     std::default_random_engine num_generator(std::random_device{}());
     std::uniform_int_distribution<int> distribution(k_num_from, k_num_to);
     

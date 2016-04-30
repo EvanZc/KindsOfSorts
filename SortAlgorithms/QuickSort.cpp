@@ -9,6 +9,11 @@
 #include "QuickSort.h"
 #include "ReturnValue.h"
 
+void QuickSortStandard(std::vector<int>& be_sorted_vec)
+{
+    QuickSortStandard(be_sorted_vec, 0, be_sorted_vec.size() - 1);
+}
+
 void QuickSortStandard(std::vector<int>& be_sorted_vec, const unsigned long idx_start, const unsigned long idx_end)
 {
     if (be_sorted_vec.size() < 1) {
