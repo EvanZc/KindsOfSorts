@@ -49,11 +49,55 @@ void InsertSortPart(std::vector<int>& sort_vec, unsigned long idx_begin, unsigne
     
 }
 
-void DivideAndConquerSortAux(std::vector<int>& sort_vec, unsigned long idx_begin, unsigned long idx_end)
+void DivideAndConquerSortBAux(std::vector<int>& sort_vec, std::vector<int>& sort_aux_vec, unsigned long idx_begin, unsigned long idx_end)
 {
+    if (idx_end >= sort_vec.size()) {
+        std::cout<<"Error, idx end is "<<idx_end<<", size is "<<sort_vec.size()<<std::endl;
+        return;
+    }
     
+    if (idx_end <= idx_begin) {
+        return;
+    }
+    
+    unsigned long idx_mid = idx_begin + (idx_end - idx_begin) / 2;
+    
+    DivideAndConquerSortBAux(sort_vec, sort_aux_vec, idx_begin, idx_mid);
+    
+    DivideAndConquerSortBAux(sort_vec, sort_aux_vec, idx_mid + 1, idx_end);
+    
+    unsigned long idx_front = idx_begin;
+    unsigned long idx_back  = idx_mid + 1;
+    
+    for (unsigned long i = idx_begin; i <= idx_end; i++) {
+        sort_aux_vec[i] = sort_vec[i];
+    }
+    
+    for (unsigned long i = idx_begin; i <= idx_end; i++) {
+        if ((idx_front <= idx_mid) && (idx_back <= idx_end)) {
+            if (sort_aux_vec[idx_front] <= sort_aux_vec[idx_back]) {
+                sort_vec[i] = sort_aux_vec[idx_front++];
+            }
+            else{
+                sort_vec[i] = sort_aux_vec[idx_back++];
+            }
+            continue;
+        }
+        
+        if ((idx_back > idx_end) && (idx_front <= idx_mid)) {
+            sort_vec[i] = sort_aux_vec[idx_front++];
+        }
+        if ((idx_front > idx_mid) && (idx_back <= idx_end)) {
+            sort_vec[i] = sort_aux_vec[idx_back++];
+        }
+    }
 }
 
+void DivideAndConquerSortB(std::vector<int>& sort_vec)
+{
+    std::vector<int> aux_vec(sort_vec.size(), 0);
+    DivideAndConquerSortBAux(sort_vec, aux_vec, 0, sort_vec.size() - 1);
+}
 
 void DivideAndConquerSort(std::vector<int>& sort_vec)
 {
