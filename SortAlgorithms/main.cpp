@@ -28,6 +28,7 @@ int main(int argc, const char * argv[]) {
         
         std::vector<int> vec_bubble(vec[0]);
         std::vector<int> vec_insert(vec[0]);
+        std::vector<int> vec_dcSort(vec[0]);
         
         BubbleSort(vec_bubble);
         
@@ -40,6 +41,13 @@ int main(int argc, const char * argv[]) {
         if (!IsVecIntAscendingOrder(vec_insert)) {
             std::cout<<"oops insert sort"<<std::endl;
         }
+        
+        DivideAndConquerSort(vec_dcSort);
+        
+        if (!IsVecIntAscendingOrder(vec_dcSort)) {
+            std::cout<<"oops divide and conquer sort"<<std::endl;
+        }
+        
     }
     
     std::cout<<"yes ok!"<<std::endl;

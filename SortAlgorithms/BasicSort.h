@@ -18,6 +18,11 @@ void BubbleSort(std::vector<int>&);
 //ascending order
 void InsertSort(std::vector<int>&);
 
+//ascending order
+void InsertSortPart(std::vector<int>& sort_vec, unsigned long idx_begin, unsigned long idx_end);
+
+//ascending order
+void DivideAndConquerSort(std::vector<int>& sort_vec);
 
 //Divide and Conquer Sort;
 
