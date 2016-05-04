@@ -68,7 +68,7 @@ int main(int argc, const char * argv[]) {
         }
         
         time1 = GetNowNanoSecond().count();
-        DivideAndConquerSort(vec_quick_sort_b);
+        QuickSortStandardB(vec_quick_sort_b);
         time2 = GetNowNanoSecond().count();
         time_total_arr[4] += time2 - time1;
         

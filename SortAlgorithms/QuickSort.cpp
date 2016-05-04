@@ -75,7 +75,8 @@ unsigned long QuickSortStandardPickPivot(std::vector<int>& be_sorted_vec,unsigne
     return idx_end;
 }
 
-//choose start as pivot is much more faster than random than middle
+//choose start as pivot is much more faster than random but middle is faster than simple in
+//most cases.
 
 void QuickSortStandardB(std::vector<int>& be_sorted_vec)
 {
