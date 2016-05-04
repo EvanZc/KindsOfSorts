@@ -107,10 +107,10 @@
 				59E037511CD493A900A58DAB /* Sort.h */,
 				59E037521CD4A59C00A58DAB /* BasicSort.cpp */,
 				59E037531CD4A59C00A58DAB /* BasicSort.h */,
-				59E0374A1CD2702400A58DAB /* QuickSort.cpp */,
 				59E0374B1CD2702400A58DAB /* QuickSort.h */,
-				59E0374E1CD39FC600A58DAB /* TestSortResult.cpp */,
+				59E0374A1CD2702400A58DAB /* QuickSort.cpp */,
 				59E0374F1CD39FC600A58DAB /* TestSortResult.h */,
+				59E0374E1CD39FC600A58DAB /* TestSortResult.cpp */,
 			);
 			name = SortAlgorithms;
 			sourceTree = "<group>";

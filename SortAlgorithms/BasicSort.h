@@ -24,6 +24,7 @@ void InsertSortPart(std::vector<int>& sort_vec, unsigned long idx_begin, unsigne
 //ascending order
 void DivideAndConquerSort(std::vector<int>& sort_vec);
 
+//make an aux sort which can save the time to create small vector
 void DivideAndConquerSortB(std::vector<int>& sort_vec);
 //Divide and Conquer Sort;
 
