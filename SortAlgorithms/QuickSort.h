@@ -21,4 +21,7 @@ void QuickSortStandardB(std::vector<int>& be_sorted_vec);
 void QuickSortStandardB(std::vector<int>&,const unsigned long idx_start,const unsigned long idx_end);
 unsigned long QuickSortStandardPickPivotB(std::vector<int>& be_sorted_vec, unsigned long idx_begin, unsigned long idx_end);
 
+void QuickSortStandardC(std::vector<int>& be_sorted_vec);
+void QuickSortStandardC(std::vector<int>&,const unsigned long idx_start,const unsigned long idx_end);
+
 #endif /* defined(__SortAlgorithms__QuickSort__) */

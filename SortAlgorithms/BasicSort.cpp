@@ -41,10 +41,11 @@ void InsertSortPart(std::vector<int>& sort_vec, unsigned long idx_begin, unsigne
                 break;
             }
         }
+        int replace_value = sort_vec[i];
         for (long long start_move = i; start_move > j; start_move--) {
             sort_vec[start_move] = sort_vec[start_move - 1];
         }
-        sort_vec[j + 1] = sort_vec[i];
+        sort_vec[j + 1] = replace_value;
     }
     
 }

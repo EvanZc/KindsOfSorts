@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
     long long time1;
     long long time2;
     
-    long long time_total_arr[5] = {0};
+    long long time_total_arr[6] = {0};
     
     while (loop_time--) {
         
@@ -30,6 +30,7 @@ int main(int argc, const char * argv[]) {
         std::vector<int> vec_insert(vec[0]);
         std::vector<int> vec_dcSort(vec[0]);
         std::vector<int> vec_quick_sort_b(vec[0]);
+        std::vector<int> vec_quick_sort_c(vec[0]);
         
         time1 = GetNowNanoSecond().count();
         QuickSortStandard(vec[0]);
@@ -71,9 +72,17 @@ int main(int argc, const char * argv[]) {
         QuickSortStandardB(vec_quick_sort_b);
         time2 = GetNowNanoSecond().count();
         time_total_arr[4] += time2 - time1;
-        
-        if (!IsVecIntAscendingOrder(vec_dcSort)) {
+        if (!IsVecIntAscendingOrder(vec_quick_sort_b)) {
             std::cout<<"oops quick sort b"<<std::endl;
+        }
+        
+        time1 = GetNowNanoSecond().count();
+        QuickSortStandardC(vec_quick_sort_c);
+        time2 = GetNowNanoSecond().count();
+        time_total_arr[5] += time2 - time1;
+        
+        if (!IsVecIntAscendingOrder(vec_quick_sort_c)) {
+            std::cout<<"oops quick sort c"<<std::endl;
         }
         
     }
@@ -82,6 +91,7 @@ int main(int argc, const char * argv[]) {
     std::cout<<time_total_arr[2]<<" insert sort"<<std::endl;
     std::cout<<time_total_arr[3]<<" divide & conquer sort A"<<std::endl;
     std::cout<<time_total_arr[4]<<" quick sort b"<<std::endl;
+    std::cout<<time_total_arr[5]<<" quick sort c"<<std::endl;
     
     return 0;
 }
